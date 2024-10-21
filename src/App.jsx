@@ -1,4 +1,30 @@
 export default function App() {
+
+  const pic1 = {
+    src: "images/pic1.jpg",
+    alt: "Closeup of a human eye"
+  };
+
+  const pic2 = {
+    src: "images/pic2.jpg",
+    alt: "Rock that looks like a wave"
+  };
+
+  const pic3 = {
+    src: "images/pic3.jpg",
+    alt: "Purple and white pansies"
+  };
+
+  const pic4 = {
+    src: "images/pic4.jpg",
+    alt: "Section of wall from a pharoah's tomb"
+  };
+
+  const pic5 = {
+    src: "images/pic5.jpg",
+    alt: "	Large moth on a leaf"
+  };
+
   return (
     <>
       <h1>Image gallery example</h1>
