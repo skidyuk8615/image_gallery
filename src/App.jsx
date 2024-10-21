@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export default function App() {
 
   const pic1 = {
@@ -25,7 +27,7 @@ export default function App() {
     alt: "	Large moth on a leaf"
   };
 
-  const iamges = [pic1, pic2, pic3, pic4, pic5];
+  const pics = [pic1, pic2, pic3, pic4, pic5];
 
   return (
     <>
@@ -39,7 +41,14 @@ export default function App() {
         <div className="overlay"></div>
         <button className="dark">Darken</button>
       </div>
-      <div className="thumb-bar"></div>
+
+      <div className="thumb-bar">
+        {pics.map((pic) => {
+          return (
+            <img key={pic.src} src={pic.src} alt={pic.alt} />
+          );
+        })}
+      </div>
     </>
   );
 }
