@@ -25,6 +25,8 @@ export default function App() {
     alt: "	Large moth on a leaf"
   };
 
+  const iamges = [pic1, pic2, pic3, pic4, pic5];
+
   return (
     <>
       <h1>Image gallery example</h1>
