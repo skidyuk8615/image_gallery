@@ -26,10 +26,20 @@ export default function App() {
   const [displayedSrc, setDisplayedSrc] = useState("images/pic1.jpg");
   const [displayedAlt, setDisplayedAlt] = useState("Closeup of a human eye");
 
+  const [buttonText, setButtonText] = useState("Darken")
+
   function handleImageClick(pic) {
     setDisplayedSrc(pic.src)
     setDisplayedAlt(pic.alt)
   };
+
+  function handleButtonClick() {
+    if (buttonText = "Darken") {
+      setButtonText("Lighten")
+    } else {
+      setButtonText("Darken")
+    }
+  }
 
   return (
     <>
@@ -41,7 +51,7 @@ export default function App() {
           alt={displayedAlt}
         />
         <div className="overlay"></div>
-        <button className="dark">Darken</button>
+        <button className="dark">{buttonText}</button>
       </div>
 
       <div className="thumb-bar">
