@@ -25,7 +25,8 @@ export default function App() {
 
   const [displayedSrc, setDisplayedSrc] = useState("images/pic1.jpg");
   const [displayedAlt, setDisplayedAlt] = useState("Closeup of a human eye");
-  function handleClick(pic) {
+
+  function handleImageClick(pic) {
     setDisplayedSrc(pic.src)
     setDisplayedAlt(pic.alt)
   };
@@ -50,7 +51,7 @@ export default function App() {
               key={pic.src}
               src={pic.src}
               alt={pic.alt}
-              onClick={() => handleClick(pic)}
+              onClick={() => handleImageClick(pic)}
             />
           );
         })}
