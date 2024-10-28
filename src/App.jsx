@@ -22,11 +22,15 @@ export default function App() {
     alt: "Large moth on a leaf"
   };
   const pics = [pic1, pic2, pic3, pic4, pic5];
-
   const [displayedSrc, setDisplayedSrc] = useState("images/pic1.jpg");
   const [displayedAlt, setDisplayedAlt] = useState("Closeup of a human eye");
 
-  const [buttonText, setButtonText] = useState("Darken")
+  const [isDarken, setIsDarken] = useState(false);
+  const buttonText = isDarken ? "Lighten" : "Darken";
+
+  const overlayStyle = {
+    backgroundColor: isDarken ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)"
+  };
 
   function handleImageClick(pic) {
     setDisplayedSrc(pic.src)
@@ -34,11 +38,7 @@ export default function App() {
   };
 
   function handleButtonClick() {
-    if (buttonText = "Darken") {
-      setButtonText("Lighten")
-    } else {
-      setButtonText("Darken")
-    }
+    isDarken ? setIsDarken(false) : setIsDarken(true)
   }
 
   return (
@@ -50,8 +50,8 @@ export default function App() {
           src={displayedSrc}
           alt={displayedAlt}
         />
-        <div className="overlay"></div>
-        <button className="dark">{buttonText}</button>
+        <div className="overlay" style={overlayStyle}></div>
+        <button onClick={handleButtonClick}>{buttonText}</button>
       </div>
 
       <div className="thumb-bar">
